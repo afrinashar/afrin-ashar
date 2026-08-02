@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://afrinashar.dev/sitemap.xml
+
+# Crawl-delay can be added for slow servers
+# Crawl-delay: 10
