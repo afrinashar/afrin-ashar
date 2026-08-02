@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  color: var(--foreground);
+  background:rgb(254, 254, 255);
+  background-size: 400% 400%;
+  animation: skyGradient 18s ease infinite;
+  transition: background 1s ease, color 200ms ease;
+}
+
+body::before,
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+body::before {
+  background: radial-gradient(circle at 18% 24%, rgba(168, 237, 255, 0.55), transparent 22%),
+    radial-gradient(circle at 82% 16%, rgba(126, 190, 255, 0.42), transparent 20%);
+  filter: blur(90px);
+}
+
+body::after {
+  background: radial-gradient(circle at 12% 78%, rgba(100, 179, 255, 0.18), transparent 26%),
+    radial-gradient(circle at 86% 72%, rgba(110, 216, 255, 0.2), transparent 24%);
+  filter: blur(140px);
+}
+
+:root {
+  --background: #aa2e2e;
+  --foreground: #111827;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+.dark body {
+  background: black;
+  /* background: linear-gradient(-45deg, #000000, #0000000f, #00000075, #000000); */
+}
+
+@keyframes skyGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+/* Container */
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+/* Glass Effect */
+
+.glass {
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Gradient Text */
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #3b82f6,
+    #5cbbf6
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.1), transparent 24%);
+  pointer-events: none;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Selection */
+
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Image */
+
+img {
+  max-width: 100%;
+  display: block;
+}

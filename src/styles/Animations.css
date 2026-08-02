@@ -1,0 +1,89 @@
+/* Fade Up */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform:
+      translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+/* Float */
+
+@keyframes float {
+  0% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-12px);
+  }
+
+  100% {
+    transform:
+      translateY(0);
+  }
+}
+
+/* Glow */
+
+@keyframes glow {
+  0% {
+    box-shadow:
+      0 0 0px #3b82f6;
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px #3b82f6;
+  }
+
+  100% {
+    box-shadow:
+      0 0 0px #3b82f6;
+  }
+}
+
+/* Rotate */
+
+@keyframes rotateSlow {
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+
+.fade-up {
+  animation:
+    fadeUp 0.8s ease forwards;
+}
+
+.float {
+  animation:
+    float 4s ease-in-out infinite;
+}
+
+.glow {
+  animation:
+    glow 2s infinite;
+}
+
+.rotate-slow {
+  animation:
+    rotateSlow 20s linear infinite;
+}
