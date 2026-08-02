@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import videos from "../../../assets/nutri.mp4";
+//import videos from "../../../assets/nutri.mp4";
 interface Props {
   project: any;
 }
